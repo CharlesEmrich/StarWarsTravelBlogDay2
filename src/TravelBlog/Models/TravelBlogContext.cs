@@ -12,10 +12,16 @@ namespace TravelBlog.Models
 
         public DbSet<Location> Locations { get; set; }
         public DbSet<Experience> Experiences { get; set; }
-        public DbSet<Person> People { get; set; } 
+        public DbSet<Person> People { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TravelBlog;integrated security=True");
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
     }
 }

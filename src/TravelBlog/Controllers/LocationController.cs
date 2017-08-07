@@ -19,7 +19,8 @@ namespace TravelBlog.Controllers
 
         public IActionResult Details(int id)
         {
-            var thisLocation= db.Locations.FirstOrDefault(loc => loc.LocationId == id);
+            var thisLocation= db.Locations.Include(location => location.Comments)
+                                          .FirstOrDefault(loc => loc.LocationId == id);
 
             return View(thisLocation);
         }

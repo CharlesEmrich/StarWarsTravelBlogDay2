@@ -1,0 +1,9 @@
+﻿@model TravelBlog.Models.Comment
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Content)
+    @Html.EditorFor(model => model.Content)
+
+    < input type = "submit" value = "Add Comment" class="btn btn-default" />
+}

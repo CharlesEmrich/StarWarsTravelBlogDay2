@@ -13,6 +13,6 @@ namespace TravelBlog.Models
         public string GalacticRegion { get; set; }
         public string Biome { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
-
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
